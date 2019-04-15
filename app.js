@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const ambilight = require('ambilight-provider');
 const y = require('yeelight-awesome');
 
@@ -9,10 +10,10 @@ let red; let green; let blue;
 
 ambilight.start(500, (color) => {
   // Doesn't prevent NaNs
-  if (parseInt(color[0]) !== NaN) {
-    red = parseInt(color[0]);
-    green = parseInt(color[1]);
-    blue = parseInt(color[2]);
+  if (!Number.IsNaN(parseInt(color[0], 10))) {
+    red = parseInt(color[0], 10);
+    green = parseInt(color[1], 10);
+    blue = parseInt(color[2], 10);
   }
 });
 
